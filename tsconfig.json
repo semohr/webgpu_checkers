@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "strict": true,
+        "strictPropertyInitialization": false,
+        "useDefineForClassFields": false,
+        "noImplicitReturns": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "declaration": false,
+        "noFallthroughCasesInSwitch": true,
+        "sourceMap": true,
+        "importHelpers": true,
+        "downlevelIteration": true,
+        "module": "ESNext",
+        "target": "ESNext",
+        "moduleResolution": "node",
+        "forceConsistentCasingInFileNames": true,
+        "experimentalDecorators": true,
+        "lib": ["ESNext", "dom"],
+        "typeRoots": ["./node_modules/@webgpu/types", "./node_modules/@types"]
+    }
+}

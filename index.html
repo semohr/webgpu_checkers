@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style type="text/css">
+        body {
+            background-color: black;
+            color: #ffffff;
+            font-family: monospace;
+            font-size: 13px;
+            text-align: center;
+            margin: 0px;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        body>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        canvas {
+            outline: 2px solid #9C9898;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+        #wrapper {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #description,
+        #controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            flex: 1;
+        }
+
+        #controls button {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #9C9898;
+            background-color: black;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        #controls button:hover {
+            background-color: #9C9898;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="description">
+            <h1> Checkers WebGPU Demo</h1>
+        </div>
+        <div id="wrapper">
+            <canvas id="canvas" width="640" height="480"></canvas>
+        </div>
+        <div id="controls">
+            <div>
+                <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> <br>
+                <kdb>RMB + Mouse</kdb> <br>
+                <kbd>MMB + Mouse</kbd> <br>
+                to move camera
+            </div>
+            <button id="fullscreen">Fullscreen</button>
+        </div>
+    </div>
+</body>
+<script src="bundle.js"></script>
+<script type="text/javascript">
+
+    function exitHandler() {
+        if (!document.fullscreenElement &&
+            !document.webkitIsFullScreen &&
+            !document.mozFullScreen &&
+            !document.msFullscreenElement) {
+            // Exit fullscreen mode
+            document.removeEventListener('fullscreenchange', exitHandler);
+            document.removeEventListener('webkitfullscreenchange', exitHandler);
+            document.removeEventListener('mozfullscreenchange', exitHandler);
+            document.removeEventListener('MSFullscreenChange', exitHandler);
+        }
+    }
+
+
+    function fullscreen_canvas() {
+        const canvas = document.getElementById('wrapper');
+
+        if (canvas.requestFullscreen) {
+            canvas.requestFullscreen();
+        }
+
+        else if (canvas.webkitRequestFullscreen) {
+            canvas.webkitRequestFullscreen();
+        }
+
+        else if (canvas.mozRequestFullScreen) {
+            canvas.mozRequestFullScreen();
+        }
+
+        else if (canvas.msRequestFullscreen) {
+            canvas.msRequestFullscreen();
+        }
+
+        // Event listener for exiting fullscreen
+        document.addEventListener('fullscreenchange', exitHandler);
+        document.addEventListener('webkitfullscreenchange', exitHandler);
+        document.addEventListener('mozfullscreenchange', exitHandler);
+        document.addEventListener('MSFullscreenChange', exitHandler);
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+
+        // Fullscreen button
+        const fullscreen = document.getElementById('fullscreen');
+        fullscreen.addEventListener('click', fullscreen_canvas);
+    }
+
+        , false);
+</script>
+
+</html>
