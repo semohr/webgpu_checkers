@@ -1,21 +1,25 @@
 # Checkers WebGPU Demo
 
-A simple checkers game using WebGpu with star trek theming.
-It was mainly created to explore the new (2023) WebGpu API and not to create a fully functional game, especially user input is not very polished.
+This is a simple checkers game implemented using WebGPU, featuring a Star Trek theme. The primary purpose of this project is to explore the new (2023) WebGPU API, rather than creating a fully functional game. Please note that the user input functionality is not yet refined.
 
-Feel free to have a look at the code and use it as a starting point for your own WebGpu projects.
+Feel free to examine the source code and utilize it as a starting point for your own WebGPU projects.
 
-WEBGPU IS STILL IN DEVELOPMENT AND NOT SUPPORTED BY ALL BROWSERS. THIS DEMO WILL ONLY WORK WITH WEBGPU ENABLED. SEE [HERE](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API#browser_compatibility) FOR COMPATIBILITY.
+Note: WebGPU is still under development and may not be supported by all browsers. This demo will only function correctly on browsers with WebGPU enabled. For browser compatibility details, refer to the [Mozilla Developer Network documentation](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API#browser_compatibility).
 
-I have put a demo online here (TODO)
+Check out the online demo [here](https://webgpu-checkers.vercel.app/).
 
 ![Demo](./demo.png)
 
-## Run
+## How to run
 
-You can run it locally by cloning the repo and running `npm install` and `npm run dev`. This will start a local server on port 4000.
+To run the demo locally, follow these steps:
+
+- Clone this repository.
+- Run `npm install` to install the necessary dependencies.
+- Execute `npm run dev` to start a local server on port 4000.
 
 ## Assets
+The following assets were used in this project:
 
 -   [Checker 3D Meshes](https://www.thingiverse.com/thing:5791393)
 -   [Table](https://skfb.ly/6BYHM) by yryabchenko is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
